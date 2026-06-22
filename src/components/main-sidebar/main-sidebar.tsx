@@ -1,13 +1,12 @@
-import Link from "next/link";
 import styles from "./main-sidebar.module.css";
 import logoImg from "../../../assets/logo.webp";
 import Image from "next/image";
+import NavLink from "../nav-link/nav-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse, faCreditCard, faChartColumn,
   faMoneyBillTransfer, faTags, faFolder,
 } from "@fortawesome/free-solid-svg-icons";
-import NavLink from "../nav-link/nav-link";
 
 export default function MainSidebar(): React.JSX.Element {
   return (
@@ -19,22 +18,34 @@ export default function MainSidebar(): React.JSX.Element {
 
         <nav className={styles.nav}>
           <NavLink href="/" exact>
-            <FontAwesomeIcon icon={faHouse} />
+          <div className={styles["icon-container"]}>
+            <FontAwesomeIcon icon={faHouse} className={styles.icon} />
+          </div>
           </NavLink>
           <NavLink href="/transacciones">
-            <FontAwesomeIcon icon={faMoneyBillTransfer} />
+            <div className={styles["icon-container"]}>
+              <FontAwesomeIcon icon={faMoneyBillTransfer} className={styles.icon} />
+            </div>
           </NavLink>
           <NavLink href="/tarjetas">
-            <FontAwesomeIcon icon={faCreditCard} />
+            <div className={styles["icon-container"]}>
+              <FontAwesomeIcon icon={faCreditCard} className={styles.icon} />
+            </div>
           </NavLink>
           <NavLink href="/etiquetas">
-            <FontAwesomeIcon icon={faTags} />
+            <div className={styles["icon-container"]}>
+              <FontAwesomeIcon icon={faTags} className={styles.icon} />
+            </div>
           </NavLink>
           <NavLink href="/graficos">
-            <FontAwesomeIcon icon={faChartColumn} />
+            <div className={styles["icon-container"]}>
+              <FontAwesomeIcon icon={faChartColumn} className={styles.icon} />
+            </div>
           </NavLink>
           <NavLink href="/carpetas">
-            <FontAwesomeIcon icon={faFolder} />
+            <div className={styles["icon-container"]}>
+              <FontAwesomeIcon icon={faFolder} className={styles.icon} />
+            </div>
           </NavLink>
         </nav>
       </aside>

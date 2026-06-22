@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.user-menu-container {
+  display: flex;
+  justify-content: end;
+}
+
+.left-panel {
+  flex: 5;
+  background-color: #2d2d2d;
+  padding: 2rem 4rem;
+}
+
+.right-panel {
+  flex: 4;
+  background-color: #ececec;
+  padding: 2rem 4rem;
+}

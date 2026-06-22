@@ -22,3 +22,15 @@
   margin-bottom: 48px;
 }
 
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.icon-container {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,37 +1,32 @@
 /* Base & Mobile First */
-.nav-item {
-  width: 4rem;
-  height: 4rem;
+.nav-link {
+  /* width: 4rem; */
+  /* height: 4rem; */
+  /* font-size: 20px; */
   border: none;
   background: transparent;
   color: #ffffff;
-  font-size: 20px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
   transition: 0.2s;
+  text-decoration: none;
 }
 
-.nav-item.active {
+.nav-link.active {
   color: var(--primary);
 }
 
-.nav-item:hover {
+.nav-link:hover {
   background: rgba(255, 255, 255, 0.08);
 }
-
-.nav-item svg {
-  width: 24px;
-  height: 24px;
-}
-
 
 /* Tablet and Desktop */
 
 @media (min-width: 768px) {
-  .link {
+  .nav-link {
     font-size: 1.25rem;
   }
 }

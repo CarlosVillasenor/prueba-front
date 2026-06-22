@@ -1,9 +1,17 @@
-import styles from "./page.module.css";
+import classes from "./page.module.css";
+import UserMenu from "../../components/user-menu/user-menu";
 
 export default function Transactions(): React.JSX.Element {
   return (
-    <div>
-      <h1>Página de Transacciones</h1>
+    <div className={classes.container}>
+      <div className={classes["left-panel"]}>
+
+      </div>
+      <div className={classes["right-panel"]}>
+        <div className={classes["user-menu-container"]}>
+          <UserMenu />
+        </div>
+      </div>
     </div>
   );
 }

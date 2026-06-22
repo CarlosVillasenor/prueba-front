@@ -11,22 +11,15 @@ type NavLinkProps = {
   exact?: boolean;
 };
 
-export default function NavLink({
-  href,
-  exact = false,
-  children,
-}: NavLinkProps) {
+export default function NavLink({ href, exact = false, children}: NavLinkProps) {
   const pathname = usePathname();
-
-  const isActive = exact
-    ? pathname === href
-    : pathname.startsWith(href);
+  const isActive = exact ? pathname === href : pathname.startsWith(href);
 
   return (
     <Link
       href={href}
-      className={`${classes['nav-item']} ${isActive ? classes.active : ''
-        }`}
+      className={`${classes['nav-link']} ${isActive ? classes.active : ''}`}
+      
     >
       {children}
     </Link>
