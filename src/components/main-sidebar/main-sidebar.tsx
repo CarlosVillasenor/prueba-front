@@ -1,4 +1,4 @@
-import styles from "./main-sidebar.module.css";
+import classes from "./main-sidebar.module.css";
 import logoImg from "../../../assets/logo.webp";
 import Image from "next/image";
 import NavLink from "../nav-link/nav-link";
@@ -11,40 +11,40 @@ import {
 export default function MainSidebar(): React.JSX.Element {
   return (
     <>
-      <aside className={styles.sidebar}>
-        <div className={styles.logo}>
+      <aside className={classes.sidebar}>
+        <div className={classes.logo}>
           <Image src={logoImg} alt="Logo" width={32} height={32} />
         </div>
 
-        <nav className={styles.nav}>
+        <nav className={classes.nav}>
           <NavLink href="/" exact>
-          <div className={styles["icon-container"]}>
-            <FontAwesomeIcon icon={faHouse} className={styles.icon} />
+          <div className={classes["icon-container"]}>
+            <FontAwesomeIcon icon={faHouse} className={classes.icon} />
           </div>
           </NavLink>
           <NavLink href="/transacciones">
-            <div className={styles["icon-container"]}>
-              <FontAwesomeIcon icon={faMoneyBillTransfer} className={styles.icon} />
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faMoneyBillTransfer} className={classes.icon} />
             </div>
           </NavLink>
           <NavLink href="/tarjetas">
-            <div className={styles["icon-container"]}>
-              <FontAwesomeIcon icon={faCreditCard} className={styles.icon} />
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faCreditCard} className={classes.icon} />
             </div>
           </NavLink>
           <NavLink href="/etiquetas">
-            <div className={styles["icon-container"]}>
-              <FontAwesomeIcon icon={faTags} className={styles.icon} />
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faTags} className={classes.icon} />
             </div>
           </NavLink>
           <NavLink href="/graficos">
-            <div className={styles["icon-container"]}>
-              <FontAwesomeIcon icon={faChartColumn} className={styles.icon} />
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faChartColumn} className={classes.icon} />
             </div>
           </NavLink>
           <NavLink href="/carpetas">
-            <div className={styles["icon-container"]}>
-              <FontAwesomeIcon icon={faFolder} className={styles.icon} />
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faFolder} className={classes.icon} />
             </div>
           </NavLink>
         </nav>
