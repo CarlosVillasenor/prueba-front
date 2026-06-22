@@ -1,4 +1,4 @@
-import Link from "next/link";
+import NavLink from "next/link";
 import styles from "./main-sidebar.module.css";
 import logoImg from "../../assets/logo.webp";
 import Image from "next/image";
@@ -17,24 +17,36 @@ export default function MainSidebar(): React.JSX.Element {
         </div>
 
         <nav className={styles.nav}>
-          <button className={styles["nav-item"] + " " + styles.active}>
-            <FontAwesomeIcon icon={faHouse} />
-          </button>
-          <button className={styles["nav-item"]}>
-            <FontAwesomeIcon icon={faMoneyBillTransfer} />
-          </button>
-          <button className={styles["nav-item"]}>
-            <FontAwesomeIcon icon={faCreditCard} />
-          </button>
-          <button className={styles["nav-item"]}>
-            <FontAwesomeIcon icon={faTags} />
-          </button>
-          <button className={styles["nav-item"]}>
-            <FontAwesomeIcon icon={faChartColumn} />
-          </button>
-          <button className={styles["nav-item"]}>
-            <FontAwesomeIcon icon={faFolder} />
-          </button>
+          <NavLink href="/">
+            <button className={styles["nav-item"] + " " + styles.active}>
+              <FontAwesomeIcon icon={faHouse} />
+            </button>
+          </NavLink>
+          <NavLink href="/transacciones">
+            <button className={styles["nav-item"]}>
+              <FontAwesomeIcon icon={faMoneyBillTransfer} />
+            </button>
+          </NavLink>
+          <NavLink href="/tarjetas">
+            <button className={styles["nav-item"]}>
+              <FontAwesomeIcon icon={faCreditCard} />
+            </button>
+          </NavLink>
+          <NavLink href="/etiquetas">
+            <button className={styles["nav-item"]}>
+              <FontAwesomeIcon icon={faTags} />
+            </button>
+          </NavLink>
+          <NavLink href="/graficos">
+            <button className={styles["nav-item"]}>
+              <FontAwesomeIcon icon={faChartColumn} />
+            </button>
+          </NavLink>
+          <NavLink href="/carpetas">
+            <button className={styles["nav-item"]}>
+              <FontAwesomeIcon icon={faFolder} />
+            </button>
+          </NavLink>
         </nav>
       </aside>
     </>

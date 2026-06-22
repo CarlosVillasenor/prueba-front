@@ -60,7 +60,6 @@ Principalmente los siguientes aspectos:
 
 - Qué la aplicación sea capaz de ajustarse de manera correcta a diversas dimensiones. 
 
-
 - Incluir un componente para mostrar mensajes de Errores Generales en toda la aplicación.
 
 2.  **CSS:** Utilizar CSS Grid y/o CSS Flexbox, para la maquetación del proyecto 
