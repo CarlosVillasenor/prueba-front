@@ -7,7 +7,7 @@ type PinInputProps = {
   onChange: (value: string) => void;
 };
 
-export default function PinInput({ value, onChange}: PinInputProps) {
+export default function PinInput({ value, onChange}: PinInputProps): React.JSX.Element  {
   return (
     <div className={classes.container}>
       <input
