@@ -9,7 +9,7 @@ const formattedDate = today.toLocaleDateString("es-MX", {
   year: "numeric",
 });
 
-export default function DateHeader() {
+export default function DateHeader(): React.JSX.Element {
   return (
     <div className={classes.container}>
       <div className={classes["date-info"]}>
