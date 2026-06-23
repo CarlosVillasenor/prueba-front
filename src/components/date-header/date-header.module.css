@@ -1,0 +1,46 @@
+/* DateHeader.module.css */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.date-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4338ca;
+}
+
+.date {
+  margin: 0;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.calendar-button {
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background-color: #4338ca;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}

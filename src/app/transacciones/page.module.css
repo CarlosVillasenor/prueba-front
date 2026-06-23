@@ -6,6 +6,7 @@
 .user-menu-container {
   display: flex;
   justify-content: end;
+  margin-bottom: 1rem;
 }
 
 .left-panel {
