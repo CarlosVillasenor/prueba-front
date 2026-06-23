@@ -3,6 +3,7 @@ import UserMenu from "../../components/user-menu/user-menu";
 import DateHeader from "../../components/date-header/date-header";
 import ActionButtons from "../../components/action-buttons/action-buttons";
 import TransactionsDisplayer from "../../components/transactions-displayer/transactions-displayer";
+import Calculator from "../../components/calculator/calculator";
 
 export default function Transactions(): React.JSX.Element {
   return (
@@ -17,7 +18,7 @@ export default function Transactions(): React.JSX.Element {
         <div className={classes["title"]}>
           Remesas
         </div>
-
+        <Calculator />
 
       </div>
       <div className={classes["right-panel"]}>
