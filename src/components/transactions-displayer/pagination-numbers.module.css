@@ -1,0 +1,9 @@
+.pagination-numbers {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  color: black;
+  gap: 0.5rem;
+  font-weight: bold;
+  padding: 1rem 0;
+}

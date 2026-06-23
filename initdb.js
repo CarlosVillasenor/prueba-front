@@ -23,6 +23,9 @@ const dummyRemittances = [
   { company: "Wise", amount: "14500", status: "", created_at: "20231220", charged_at: "20231220" },
   { company: "Skrill", amount: "7800", status: "", created_at: "20231221", charged_at: "20231221" },
   { company: "Neteller", amount: "9900", status: "", created_at: "20231222", charged_at: "20231222" },
+  { company: "Western Union", amount: "15500", status: "", created_at: "20231223", charged_at: "20231223" },
+  { company: "MoneyGram", amount: "12800", status: "", created_at: "20231224", charged_at: "20231224" },
+  { company: "PayPal", amount: "8700", status: "", created_at: "20231225", charged_at: "20231225" }
 ];
 
 // Create the remittances table if it doesn't exist
