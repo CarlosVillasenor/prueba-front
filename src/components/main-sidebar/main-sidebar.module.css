@@ -12,9 +12,6 @@
 .logo-container {
   width: 4rem;
   height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 12px;
   background: var(--content-bg);
   overflow: hidden;

@@ -9,6 +9,16 @@ export default function Transactions(): React.JSX.Element {
     <div className={classes.container}>
       <div className={classes["left-panel"]}>
 
+
+        <div className={classes["header"]}>
+          Ventanilla <strong>Digital</strong>
+        </div>
+        <div className={classes["divider"]}></div>
+        <div className={classes["title"]}>
+          Remesas
+        </div>
+
+
       </div>
       <div className={classes["right-panel"]}>
         <div className={classes["menu-container"]}>

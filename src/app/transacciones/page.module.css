@@ -12,12 +12,33 @@
 .left-panel {
   flex: 5;
   background-color: #2d2d2d;
-  padding: 2rem 4rem;
+  padding: 3rem;
 }
 
 .right-panel {
   flex: 4;
-  background-color: #ececec;
-  padding: 2rem 4rem;
+  background-color: white;
+  padding: 3rem;
 }
 
+.header {
+  color: var(--text);
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.header strong {
+  font-weight: 700;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--primary);
+  margin-bottom: 22px;
+}
+
+.title {
+  color: var(--primary);
+  font-size: 32px;
+  font-weight: 700;
+}
