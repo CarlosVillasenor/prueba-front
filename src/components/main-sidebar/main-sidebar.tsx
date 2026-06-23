@@ -12,15 +12,17 @@ export default function MainSidebar(): React.JSX.Element {
   return (
     <>
       <aside className={classes.sidebar}>
-        <div className={classes.logo}>
-          <Image src={logoImg} alt="Logo" width={32} height={32} />
+        <div className={classes["logo-container"]}>
+          <a href="https://nueve09.mx/" target="_blank" rel="noopener noreferrer" className={classes["external-link"]}>
+            <Image src={logoImg} alt="Logo" loading="lazy" className={classes["logo-img"]} />
+          </a>
         </div>
 
         <nav className={classes.nav}>
           <NavLink href="/" exact>
-          <div className={classes["icon-container"]}>
-            <FontAwesomeIcon icon={faHouse} className={classes.icon} />
-          </div>
+            <div className={classes["icon-container"]}>
+              <FontAwesomeIcon icon={faHouse} className={classes.icon} />
+            </div>
           </NavLink>
           <NavLink href="/transacciones">
             <div className={classes["icon-container"]}>
@@ -48,7 +50,7 @@ export default function MainSidebar(): React.JSX.Element {
             </div>
           </NavLink>
         </nav>
-      </aside>
+      </aside >
     </>
   );
 }
