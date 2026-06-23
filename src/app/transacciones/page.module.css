@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.user-menu-container {
+.menu-container {
   display: flex;
   justify-content: end;
   margin-bottom: 1rem;
@@ -20,3 +20,4 @@
   background-color: #ececec;
   padding: 2rem 4rem;
 }
+

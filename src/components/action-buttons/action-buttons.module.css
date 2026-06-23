@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  border: 2px solid #d8d8f0;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+  color: #5a54e8;
+}
