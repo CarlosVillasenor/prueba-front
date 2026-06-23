@@ -38,7 +38,7 @@ Principalmente los siguientes aspectos:
 
 **Objetivo:** Desarrollar una aplicación web, con base a maqueta.png.
 
- 
+
 #### Requerimientos generales
 
 1. La aplicación debe cumplir con los siguientes **requisitos funcionales:**

@@ -1,0 +1,4 @@
+.transactions-container {
+  max-height: 40rem;
+  overflow: scroll;
+}
