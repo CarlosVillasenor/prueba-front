@@ -7,3 +7,17 @@
   font-weight: bold;
   padding: 1rem 0;
 }
+
+.pagination-number {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.active {
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+}

@@ -4,8 +4,11 @@ import DateHeader from "../../components/date-header/date-header";
 import ActionButtons from "../../components/action-buttons/action-buttons";
 import TransactionsDisplayer from "../../components/transactions-displayer/transactions-displayer";
 import Calculator from "../../components/calculator/calculator";
+import { getAllRemittances } from "../../../lib/remittances";
 
-export default function Transactions(): React.JSX.Element {
+export default async function Transactions(): Promise<React.JSX.Element> {
+  const transactions = await getAllRemittances();
+
   return (
     <div className={classes.container}>
       <div className={classes["left-panel"]}>
@@ -27,7 +30,7 @@ export default function Transactions(): React.JSX.Element {
         <div className={classes["menu-container"]}>
           <ActionButtons />
         </div>
-        <TransactionsDisplayer />
+        <TransactionsDisplayer transactions={transactions} />
       </div>
     </div>
   );
