@@ -5,24 +5,9 @@
   padding: 20px 0;
 }
 
-.reference {
+.text {
   flex: 1;
   font-size: 16px;
-  font-weight: 600;
   color: #6b6b6b;
-}
-
-.company {
-  flex: 1;
-  font-size: 16px;
-  color: #4a4a4a;
   text-align: center;
-}
-
-.amount {
-  flex: 1;
-  font-size: 16px;
-  font-weight: 600;
-  color: #4a4a4a;
-  text-align: right;
 }

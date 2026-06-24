@@ -33,6 +33,7 @@ export default function TransactionDisplayer({ transactions }: { transactions: T
       <div className={classes["transactions-container"]}>
         {getRemittances(currentPage, 10).map((transaction: Transaction) => (
           <TransactionItem
+            id={transaction.id}
             key={transaction.id}
             created_at={transaction.created_at}
             company={transaction.company}
