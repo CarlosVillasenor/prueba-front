@@ -3,11 +3,13 @@
 import TransactionItem from "./transaction-item";
 import classes from "./transactions-displayer.module.css";
 import PaginationNumbers from "./pagination-numbers";
-import { useState } from "react";
+import FilterCheckbox from "../filter-checkbox/filter-checkbox";
+import { useState, useMemo } from "react";
 
 type Transaction = {
   id: number;
   created_at: string;
+  charged_at: number;
   company: string;
   amount: number;
 };
@@ -20,6 +22,7 @@ type TransactionDisplayerProps = {
 };
 
 export default function TransactionDisplayer({ transactions, searchValues }: TransactionDisplayerProps): React.JSX.Element {
+  const [chargedFilter, setChargedFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, selectedField] = searchValues;
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
@@ -40,11 +43,21 @@ export default function TransactionDisplayer({ transactions, searchValues }: Tra
     return transaction.id.toString().includes(normalizedSearchTerm);
   });
 
-  const remittancesCount = filteredTransactions.length;
+  const remittancesCount = useMemo(() => {
+    return chargedFilter ?
+      filteredTransactions.filter((transaction: Transaction) => transaction.charged_at > 0).length :
+      filteredTransactions.length;
+  }, [chargedFilter, filteredTransactions]);
 
-  function getRemittances(page = 1, pageSize = 10) {
+  function getCurrentRemittances(page = 1, pageSize = 10): Transaction[] {
     const offset = (page - 1) * pageSize;
-    const remittances = filteredTransactions.slice(offset, offset + pageSize);
+    let remittances = filteredTransactions;
+
+    if (chargedFilter) {
+      remittances = remittances.filter((transaction: Transaction) => transaction.charged_at > 0);
+    }
+
+    remittances = remittances.slice(offset, offset + pageSize);
 
     return remittances;
   }
@@ -55,9 +68,10 @@ export default function TransactionDisplayer({ transactions, searchValues }: Tra
 
   return (
     <>
+      <FilterCheckbox checked={chargedFilter} onChange={() => setChargedFilter(!chargedFilter)} />
       <PaginationNumbers pages={ceilRemittances(remittancesCount)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <div className={classes["transactions-container"]}>
-        {getRemittances(currentPage, 10).map((transaction: Transaction) => (
+        {getCurrentRemittances(currentPage).map((transaction: Transaction) => (
           <TransactionItem
             id={transaction.id}
             key={transaction.id}
