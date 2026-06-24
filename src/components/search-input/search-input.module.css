@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.input {
+  flex: 2;
+  padding: 0.5rem;
+  border: 2px solid #e5e5e5;
+  border-radius: 4px;
+}

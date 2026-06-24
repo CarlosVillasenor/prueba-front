@@ -4,6 +4,7 @@ import DateHeader from "../../components/date-header/date-header";
 import ActionButtons from "../../components/action-buttons/action-buttons";
 import TransactionsDisplayer from "../../components/transactions-displayer/transactions-displayer";
 import Calculator from "../../components/calculator/calculator";
+import SearchInput from "../../components/search-input/search-input";
 import { getAllRemittances } from "../../../lib/remittances";
 
 export default async function Transactions(): Promise<React.JSX.Element> {
@@ -30,6 +31,7 @@ export default async function Transactions(): Promise<React.JSX.Element> {
         <div className={classes["menu-container"]}>
           <ActionButtons />
         </div>
+        <SearchInput />
         <TransactionsDisplayer transactions={transactions} />
       </div>
     </div>
