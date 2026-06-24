@@ -43,15 +43,15 @@ Principalmente los siguientes aspectos:
 
 1. La aplicación debe cumplir con los siguientes **requisitos funcionales:**
 
-- Crear una aplicación que incluya todos los componentes mostrados en la maqueta.
+- [*] Crear una aplicación que incluya todos los componentes mostrados en la maqueta. 
 
-- Crear una lista de objetos que contenga información de más de 12 remesas. [{"id":"","company":"","amount":"12000","status":"", created_at:"20231203","charged_at":"20231203"}]
+- [*] Crear una lista de objetos que contenga información de más de 12 remesas. [{"id":"","company":"","amount":"12000","status":"", created_at:"20231203","charged_at":"20231203"}]
+
+- [*]Paginación de las remesas
 
 - Crear sección de busqueda por id, company o monto
 
-- Paginación de las remesas 
-
-- Mostrar los primeros 10 remesas por **charged_at** y que hayan sido cobradas; del resultado de la búsqueda, incluyendo id (`'remesa.id'`), la compañia (`'remesa.company'`) y monto (`'remesa.amount'`) de cada registro.
+- Mostrar las primeros 10 remesas por **charged_at** y que hayan sido cobradas; del resultado de la búsqueda, incluyendo id (`'remesa.id'`), la compañia (`'remesa.company'`) y monto (`'remesa.amount'`) de cada registro.
 
 - La interfaz tipo calculadora debe ser funcional.
     1) validar datos de entrada
