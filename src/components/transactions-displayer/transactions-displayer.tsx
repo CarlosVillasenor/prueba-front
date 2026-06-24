@@ -4,6 +4,7 @@ import TransactionItem from "./transaction-item";
 import classes from "./transactions-displayer.module.css";
 import PaginationNumbers from "./pagination-numbers";
 import { useState } from "react";
+import { useSearchInput } from "../search-input/search-input-context";
 
 type Transaction = {
   id: number;
@@ -14,11 +15,31 @@ type Transaction = {
 
 export default function TransactionDisplayer({ transactions }: { transactions: Transaction[] }): React.JSX.Element {
   const [currentPage, setCurrentPage] = useState(1);
-  const remittancesCount = transactions.length;
+  const { searchValues } = useSearchInput();
+  const [searchTerm, selectedField] = searchValues;
+  const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
+  const filteredTransactions = transactions.filter((transaction: Transaction) => {
+    if (!normalizedSearchTerm) {
+      return true;
+    }
+
+    if (selectedField === "company") {
+      return transaction.company.toLowerCase().includes(normalizedSearchTerm);
+    }
+
+    if (selectedField === "amount") {
+      return transaction.amount.toString().includes(normalizedSearchTerm);
+    }
+
+    return transaction.id.toString().includes(normalizedSearchTerm);
+  });
+
+  const remittancesCount = filteredTransactions.length;
 
   function getRemittances(page = 1, pageSize = 10) {
     const offset = (page - 1) * pageSize;
-    const remittances = transactions.slice(offset, offset + pageSize);
+    const remittances = filteredTransactions.slice(offset, offset + pageSize);
 
     return remittances;
   }

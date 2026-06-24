@@ -49,7 +49,7 @@ Principalmente los siguientes aspectos:
 
 - [✓] Paginación de las remesas
 
-- Crear sección de busqueda por id, company o monto
+- [✓] Crear sección de busqueda por id, company o monto
 
 - Mostrar las primeros 10 remesas por **charged_at** y que hayan sido cobradas; del resultado de la búsqueda, incluyendo id (`'remesa.id'`), la compañia (`'remesa.company'`) y monto (`'remesa.amount'`) de cada registro.
 
