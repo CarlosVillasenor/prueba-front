@@ -4,6 +4,7 @@ import TransactionItem from "./transaction-item";
 import classes from "./transactions-displayer.module.css";
 import PaginationNumbers from "./pagination-numbers";
 import FilterCheckbox from "../filter-checkbox/filter-checkbox";
+import SearchInput from "../search-input/search-input";
 import { useState, useMemo } from "react";
 
 type Transaction = {
@@ -18,12 +19,12 @@ type SearchValues = [string, string];
 
 type TransactionDisplayerProps = {
   transactions: Transaction[];
-  searchValues: SearchValues;
 };
 
-export default function TransactionDisplayer({ transactions, searchValues }: TransactionDisplayerProps): React.JSX.Element {
+export default function TransactionDisplayer({ transactions }: TransactionDisplayerProps): React.JSX.Element {
   const [chargedFilter, setChargedFilter] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchValues, setSearchValues] = useState<SearchValues>(["", "id"]);
   const [searchTerm, selectedField] = searchValues;
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
@@ -68,6 +69,7 @@ export default function TransactionDisplayer({ transactions, searchValues }: Tra
 
   return (
     <>
+      <SearchInput searchValues={searchValues} setSearchValues={setSearchValues} />
       <FilterCheckbox checked={chargedFilter} onChange={() => setChargedFilter(!chargedFilter)} />
       <PaginationNumbers pages={ceilRemittances(remittancesCount)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <div className={classes["transactions-container"]}>

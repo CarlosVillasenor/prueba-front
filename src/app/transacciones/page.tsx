@@ -3,8 +3,8 @@ import UserMenu from "../../components/user-menu/user-menu";
 import DateHeader from "../../components/date-header/date-header";
 import ActionButtons from "../../components/action-buttons/action-buttons";
 import Calculator from "../../components/calculator/calculator";
-import TransaccionesClient from "../../components/transacciones-client/transacciones-client";
 import { getAllRemittances } from "../../../lib/remittances";
+import TransactionsDisplayer from "../../components/transactions-displayer/transactions-displayer";
 
 export default async function Transactions(): Promise<React.JSX.Element> {
   const transactions = await getAllRemittances();
@@ -20,7 +20,6 @@ export default async function Transactions(): Promise<React.JSX.Element> {
           Remesas
         </div>
         <Calculator />
-
       </div>
       <div className={classes["right-panel"]}>
         <div className={classes["menu-container"]}>
@@ -30,7 +29,7 @@ export default async function Transactions(): Promise<React.JSX.Element> {
         <div className={classes["menu-container"]}>
           <ActionButtons />
         </div>
-        <TransaccionesClient transactions={transactions} />
+        <TransactionsDisplayer transactions={transactions} />
       </div>
     </div>
   );
