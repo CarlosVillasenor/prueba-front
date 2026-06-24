@@ -51,7 +51,7 @@ Principalmente los siguientes aspectos:
 
 - [✓] Crear sección de busqueda por id, company o monto
 
-- Mostrar las primeros 10 remesas por **charged_at** y que hayan sido cobradas; del resultado de la búsqueda, incluyendo id (`'remesa.id'`), la compañia (`'remesa.company'`) y monto (`'remesa.amount'`) de cada registro.
+- Mostrar las primeras 10 remesas por **charged_at** y que hayan sido cobradas; del resultado de la búsqueda, incluyendo id (`'remesa.id'`), la compañia (`'remesa.company'`) y monto (`'remesa.amount'`) de cada registro.
 
 - La interfaz tipo calculadora debe ser funcional.
     1) validar datos de entrada

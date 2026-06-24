@@ -1,10 +1,16 @@
 'use client';
 
 import classes from "./search-input.module.css";
-import { useSearchInput } from "./search-input-context";
+import type { Dispatch, SetStateAction } from "react";
 
-export default function SearchInput(): React.JSX.Element {
-  const { searchValues, setSearchValues } = useSearchInput();
+type SearchValues = [string, string];
+
+type SearchInputProps = {
+  searchValues: SearchValues;
+  setSearchValues: Dispatch<SetStateAction<SearchValues>>;
+};
+
+export default function SearchInput({ searchValues, setSearchValues }: SearchInputProps): React.JSX.Element {
   const [inputValue, selectedField] = searchValues;
 
   return (

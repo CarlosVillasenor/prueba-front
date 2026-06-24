@@ -4,7 +4,6 @@ import TransactionItem from "./transaction-item";
 import classes from "./transactions-displayer.module.css";
 import PaginationNumbers from "./pagination-numbers";
 import { useState } from "react";
-import { useSearchInput } from "../search-input/search-input-context";
 
 type Transaction = {
   id: number;
@@ -13,9 +12,15 @@ type Transaction = {
   amount: number;
 };
 
-export default function TransactionDisplayer({ transactions }: { transactions: Transaction[] }): React.JSX.Element {
+type SearchValues = [string, string];
+
+type TransactionDisplayerProps = {
+  transactions: Transaction[];
+  searchValues: SearchValues;
+};
+
+export default function TransactionDisplayer({ transactions, searchValues }: TransactionDisplayerProps): React.JSX.Element {
   const [currentPage, setCurrentPage] = useState(1);
-  const { searchValues } = useSearchInput();
   const [searchTerm, selectedField] = searchValues;
   const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
@@ -44,13 +49,13 @@ export default function TransactionDisplayer({ transactions }: { transactions: T
     return remittances;
   }
 
-  function getGroup(number: number) {
+  function ceilRemittances(number: number) {
     return Math.ceil(number / 10);
   }
 
   return (
     <>
-      <PaginationNumbers pages={getGroup(remittancesCount)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <PaginationNumbers pages={ceilRemittances(remittancesCount)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <div className={classes["transactions-container"]}>
         {getRemittances(currentPage, 10).map((transaction: Transaction) => (
           <TransactionItem

@@ -13,7 +13,7 @@ export default function TransactionItem({ id, created_at, company, amount }: Tra
       <div className={classes.text}>#{id}</div>
       <div className={classes.text}>#{created_at}</div>
       <div className={classes.text}>{company}</div>
-      <div className={classes.text}>{amount}</div>
+      <div className={classes.text}>${amount}</div>
     </div>
   );
 }
