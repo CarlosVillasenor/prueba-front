@@ -3,7 +3,7 @@ import UserMenu from "../../components/user-menu/user-menu";
 import DateHeader from "../../components/date-header/date-header";
 import ActionButtons from "../../components/action-buttons/action-buttons";
 import Calculator from "../../components/calculator/calculator";
-import { getAllRemittances } from "../../../lib/remittances";
+import { getAllRemittances, saveRemittance } from "../../../lib/remittances";
 import TransactionsDisplayer from "../../components/transactions-displayer/transactions-displayer";
 
 export default async function Transactions(): Promise<React.JSX.Element> {
