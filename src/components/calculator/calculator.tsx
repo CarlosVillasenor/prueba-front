@@ -3,6 +3,7 @@
 import { useState } from "react";
 import PinInput from "./pin-input";
 import CalculatorButtons from "./calculator-buttons";
+import { actionSaveRemittance } from "../../../lib/actions.js";
 
 export default function Calculator(): React.JSX.Element {
   const [code, setCode] = useState("");
@@ -28,7 +29,8 @@ export default function Calculator(): React.JSX.Element {
   function handleOnEnter(): void {
     console.log("Enter pressed with code:", code);
     // Clear the input after saving
-    setCode(""); 
+    setCode("");
+    actionSaveRemittance(code);
   }
 
   return (
