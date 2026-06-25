@@ -14,6 +14,8 @@ export default function PinInput({ value, onChange}: PinInputProps): React.JSX.E
         type="text"
         value={value}
         maxLength={8}
+        readOnly
+        placeholder="Ingrese el monto"
         onChange={(e) => onChange(e.target.value)}
         className={classes.input}
       />
