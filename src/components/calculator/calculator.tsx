@@ -11,9 +11,12 @@ export default function Calculator(): React.JSX.Element {
   const [error, setError] = useState("");
 
   function handleOnButtonClick(value: string): void {
+    // Prevent leading zeros
+    if (code === "" && value === "0") return;
+
     // Prevent adding more than 8 characters
     if (code.length >= 8) return;
-    
+
     if (value === ".") {
       // Prevent adding multiple decimal points
       if (!code.includes(".")) {
@@ -30,13 +33,20 @@ export default function Calculator(): React.JSX.Element {
 
   async function handleOnEnter(): Promise<void> {
     console.log("Enter pressed with code:", code);
-    // Clear the input after saving
-    setCode("");
-    
+
+    // Validate the code length and set error message
+    if (code.length > 0 && code.length < 3) {
+      setError("El código debe tener al menos 3 dígitos.");
+      return;
+    }
+
     const result = await actionSaveRemittance(code);
 
     if (result.error) {
       setError(result.error);
+    } else {
+      setError("");
+      setCode("");
     }
   }
 
