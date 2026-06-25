@@ -4,9 +4,11 @@ import { useState } from "react";
 import PinInput from "./pin-input";
 import CalculatorButtons from "./calculator-buttons";
 import { actionSaveRemittance } from "../../../lib/actions.js";
+import classes from "./calculator.module.css";
 
 export default function Calculator(): React.JSX.Element {
   const [code, setCode] = useState("");
+  const [error, setError] = useState("");
 
   function handleOnButtonClick(value: string): void {
     // Prevent adding more than 8 characters
@@ -26,11 +28,16 @@ export default function Calculator(): React.JSX.Element {
     setCode(code.slice(0, -1));
   }
 
-  function handleOnEnter(): void {
+  async function handleOnEnter(): Promise<void> {
     console.log("Enter pressed with code:", code);
     // Clear the input after saving
     setCode("");
-    actionSaveRemittance(code);
+    
+    const result = await actionSaveRemittance(code);
+
+    if (result.error) {
+      setError(result.error);
+    }
   }
 
   return (
@@ -44,6 +51,9 @@ export default function Calculator(): React.JSX.Element {
         onDelete={handleOnDelete}
         onEnter={handleOnEnter}
       />
+      <div className={classes["calculator-pin-error"]}>
+        {error && <p>* {error} *</p>}
+      </div>
     </>
   );
 }

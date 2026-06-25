@@ -34,7 +34,7 @@ db.prepare(`
   CREATE TABLE IF NOT EXISTS remittances (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       company TEXT NOT NULL,
-      amount TEXT NOT NULL,
+      amount DECIMAL(10,2) NOT NULL,
       status TEXT NOT NULL,
       created_at TEXT NOT NULL,
       charged_at TEXT NOT NULL
