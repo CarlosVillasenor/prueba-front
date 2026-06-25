@@ -11,9 +11,9 @@ export default function PinInput({ value, onChange}: PinInputProps): React.JSX.E
   return (
     <div className={classes.container}>
       <input
-        type="number"
+        type="text"
         value={value}
-        maxLength={6}
+        maxLength={8}
         onChange={(e) => onChange(e.target.value)}
         className={classes.input}
       />

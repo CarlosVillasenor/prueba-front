@@ -34,6 +34,9 @@ export default function Calculator(): React.JSX.Element {
   async function handleOnEnter(): Promise<void> {
     console.log("Enter pressed with code:", code);
 
+    setCode("");
+    setError("");
+
     // Validate the code length and set error message
     if (code.length > 0 && code.length < 3) {
       setError("El código debe tener al menos 3 dígitos.");
@@ -44,9 +47,6 @@ export default function Calculator(): React.JSX.Element {
 
     if (result.error) {
       setError(result.error);
-    } else {
-      setError("");
-      setCode("");
     }
   }
 
