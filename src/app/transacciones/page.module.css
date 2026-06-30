@@ -1,6 +1,9 @@
+/* Mobile */
+
 .container {
   display: flex;
-  height: 100vh;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .menu-container {
@@ -10,21 +13,19 @@
 }
 
 .left-panel {
-  flex: 5;
   background-color: #2d2d2d;
-  padding: 3rem;
+  padding: 2rem 1.25rem;
 }
 
 .right-panel {
-  flex: 4;
   background-color: white;
-  padding: 3rem;
+  padding: 2rem 1.25rem;
 }
 
 .header {
-  color: var(--text);
-  font-size: 18px;
   margin-bottom: 18px;
+  color: var(--text);
+  font-size: 1rem;
 }
 
 .header strong {
@@ -32,14 +33,51 @@
 }
 
 .divider {
+  margin-bottom: 22px;
   height: 1px;
   background-color: var(--primary);
-  margin-bottom: 22px;
 }
 
 .title {
   color: var(--primary);
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .left-panel {
+    flex: 5;
+    padding: 3rem 3rem 0 3rem;
+  }
+
+  .right-panel {
+    flex: 4;
+    padding: 3rem 3rem 0 3rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .header {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
 }
