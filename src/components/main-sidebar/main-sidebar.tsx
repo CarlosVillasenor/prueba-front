@@ -1,7 +1,7 @@
 import classes from "./main-sidebar.module.css";
-import logoImg from "../../../assets/logo.webp";
+import logoImg from "@/assets/logo.webp";
 import Image from "next/image";
-import NavLink from "../nav-link/nav-link";
+import NavLink from "@/components/nav-link/nav-link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse, faCreditCard, faChartColumn,

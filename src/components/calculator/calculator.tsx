@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import PinInput from "./pin-input";
-import CalculatorButtons from "./calculator-buttons";
-import { actionSaveRemittance } from "../../../lib/actions.js";
+import CalculatorButtons from "@/components/calculator/calculator-buttons";
+import { actionSaveRemittance } from "@/lib/actions";
 import classes from "./calculator.module.css";
 
 export default function Calculator(): React.JSX.Element {

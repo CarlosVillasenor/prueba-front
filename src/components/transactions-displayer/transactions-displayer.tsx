@@ -4,7 +4,7 @@ import TransactionItem from "./transaction-item";
 import classes from "./transactions-displayer.module.css";
 import PaginationNumbers from "./pagination-numbers";
 import FilterCheckbox from "./filter-checkbox";
-import SearchInput from "../search-input/search-input";
+import SearchInput from "@/components/search-input/search-input";
 import { useState, useMemo } from "react";
 
 type Transaction = {
